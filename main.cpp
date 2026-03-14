@@ -37,27 +37,29 @@ int main()
     cout << person1.toString() << endl;
 
     Person person2("Bob", 30); // Parameterized constructor
-    cout << person2.toString() << endl;
 
     Person person3("Mbarek", 30); // Parameterized constructor
                                   //  Person person3 = person2; // Copy constructor
-    // cout << person3.toString() << endl;
 
-    cout << person3.toString() << endl;
+    cout << person2.toString() << " ; memorylocation of persomn 2: " << &person2 << endl;
+    cout << person3.toString() << " ; memorylocation of persomn 3: " << &person3 << endl;
 
     // person.introduce();
-
     return 0;
 };
 
 /*
 
-sstream is a class in C++ that provides functionality for string manipulation and formatting. It allows you to create a stream that can be used to read from or write to strings, similar to how you would use streams for input and output with files or the console.
-
 benraiss@Mbareks-MacBook-Air learnCpp % g++ main.cpp Person.cpp -o main && ./main
+Default constructor called for 0x16fc06a18
 Name: undefined, Age: 0
-Name: Bob, Age: 30
-Name: Mbarek, Age: 30
-benraiss@Mbareks-MacBook-Air learnCpp %
+Parameterized constructor called for Memory location  of Object: 0x16fc069e0
+Parameterized constructor called for Memory location  of Object: 0x16fc069a8
+Name: Bob, Age: 30 ; memorylocation of persomn 2: 0x16fc069e0
+Name: Mbarek, Age: 30 ; memorylocation of persomn 3: 0x16fc069a8
+Destructor called for 0x16fc069a8
+Destructor called for 0x16fc069e0
+Destructor called for 0x16fc06a18
+benraiss@Mbareks-MacBook-Air learnCpp % 
 
 */

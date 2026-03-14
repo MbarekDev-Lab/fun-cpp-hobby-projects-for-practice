@@ -7,17 +7,20 @@ using namespace std;
 Person::Person(){
 name = "undefined";
 age = 0;
+    cout << "Default constructor called for " << this << endl;
 }
 
 
 Person::Person(string name, int age){
     this->name = name;
     this->age = age;
+    cout << "Parameterized constructor called for Memory location  of Object: " << this << endl;
 }
 
 Person::Person(const Person& other){
     name = other.name;
     age = other.age;
+    cout << "Copy constructor called for Memory location  of Object: " << this << endl;
 }
 
 void Person::setName(const string name){
@@ -53,5 +56,5 @@ string Person::toString() const{
 
 
 Person::~Person(){
-
+    cout << "Destructor called for " << this << endl;   
 }
