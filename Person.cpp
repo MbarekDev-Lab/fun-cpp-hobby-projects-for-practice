@@ -1,8 +1,12 @@
+
+#include <iostream>
+#include <sstream>
 #include "Person.hpp"
+using namespace std;
 
 Person::Person(){
-name = "M barek";
-age = 30;
+name = "undefined";
+age = 0;
 }
 
 
@@ -36,6 +40,15 @@ int Person::getAge() const{
 
 void Person::introduce()const{
     cout << "Hello, my name is " << name << " and I am " << age << " years old." << endl;
+}
+
+string Person::toString() const{
+    stringstream ss;
+    ss << "Name: ";
+    ss << name;
+    ss << ", Age: ";
+    ss << age;
+    return ss.str();
 }
 
 

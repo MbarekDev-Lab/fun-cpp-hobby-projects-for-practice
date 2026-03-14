@@ -8,12 +8,24 @@ class Person
 {
 private:
     string name;
-    int age;       
+    int age;
 
 public:
-    Person(string name, int age);
-    Person(const Person& other);
+    // Default constructor
     Person();
+
+    // Parameterized constructor
+    Person(string name, int age);
+
+    // Parameterized constructor
+    Person(string newName)
+    {
+        name = newName;
+        age = 0;
+    };
+
+    // Copy constructor
+    Person(const Person &other);
 
     void setName(string name);
     void setAge(int age);
@@ -24,13 +36,12 @@ public:
     int getAge() const;
     void introduce() const;
     string toString() const;
-    
-    bool operator==(const Person& other) const;
-    bool operator!=(const Person& other) const;
-    Person& operator=(const Person& other);
-    
+
+    bool operator==(const Person &other) const;
+    bool operator!=(const Person &other) const;
+    Person &operator=(const Person &other);
+
     // Destructor
     ~Person();
-
 };
 #endif // Person_HPP
