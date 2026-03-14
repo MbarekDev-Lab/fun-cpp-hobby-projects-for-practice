@@ -4,48 +4,53 @@
 #include "Person.hpp"
 using namespace std;
 
-Person::Person(){
-name = "undefined";
-age = 0;
-    cout << "Default constructor called for " << this << endl;
+bool Person::operator==(const Person &other) const
+{
+    return name == other.name && age == other.age;
 }
 
+bool Person::operator!=(const Person &other) const
+{
+    return !(*this == other);
+}
 
-Person::Person(string name, int age){
+Person &Person::operator=(const Person &other)
+{
+    if (this != &other)
+    {
+        name = other.name;
+        age = other.age;
+    }
+    return *this;
+}
+
+void Person::setName(const string name)
+{
     this->name = name;
-    this->age = age;
-    cout << "Parameterized constructor called for Memory location  of Object: " << this << endl;
 }
 
-Person::Person(const Person& other){
-    name = other.name;
-    age = other.age;
-    cout << "Copy constructor called for Memory location  of Object: " << this << endl;
-}
-
-void Person::setName(const string name){
-    this->name = name;
-}
-
-
-string Person::getName(){
+string Person::getName()
+{
     return name;
 }
 
-void Person::setAge(int age){
-    this->age = age;    
-    
+void Person::setAge(int age)
+{
+    this->age = age;
 }
 
-int Person::getAge() const{
+int Person::getAge() const
+{
     return age;
 }
 
-void Person::introduce()const{
+void Person::introduce() const
+{
     cout << "Hello, my name is " << name << " and I am " << age << " years old." << endl;
 }
 
-string Person::toString() const{
+string Person::toString() const
+{
     stringstream ss;
     ss << "Name: ";
     ss << name;
@@ -54,7 +59,7 @@ string Person::toString() const{
     return ss.str();
 }
 
-
-Person::~Person(){
-    cout << "Destructor called for " << this << endl;   
+Person::~Person()
+{
+    cout << "Destructor called for " << this << endl;
 }

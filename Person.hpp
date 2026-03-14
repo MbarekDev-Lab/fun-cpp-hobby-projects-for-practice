@@ -12,20 +12,16 @@ private:
 
 public:
     // Default constructor
-    Person();
+    Person() : name("undefined"), age(0) {};
 
     // Parameterized constructor
-    Person(string name, int age);
+    Person(string name, int age): name(name), age(age) {};
 
     // Parameterized constructor
-    Person(string newName)
-    {
-        name = newName;
-        age = 0;
-    };
+    Person(string newName): name(newName), age(0) {};
 
     // Copy constructor
-    Person(const Person &other);
+    Person(const Person &other): name(other.name), age(other.age){};
 
     void setName(string name);
     void setAge(int age);

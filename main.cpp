@@ -51,15 +51,12 @@ int main()
 /*
 
 benraiss@Mbareks-MacBook-Air learnCpp % g++ main.cpp Person.cpp -o main && ./main
-Default constructor called for 0x16fc06a18
 Name: undefined, Age: 0
-Parameterized constructor called for Memory location  of Object: 0x16fc069e0
-Parameterized constructor called for Memory location  of Object: 0x16fc069a8
-Name: Bob, Age: 30 ; memorylocation of persomn 2: 0x16fc069e0
-Name: Mbarek, Age: 30 ; memorylocation of persomn 3: 0x16fc069a8
-Destructor called for 0x16fc069a8
-Destructor called for 0x16fc069e0
-Destructor called for 0x16fc06a18
+Name: Bob, Age: 30 ; memorylocation of persomn 2: 0x16b3569e0
+Name: Mbarek, Age: 30 ; memorylocation of persomn 3: 0x16b3569a8
+Destructor called for 0x16b3569a8
+Destructor called for 0x16b3569e0
+Destructor called for 0x16b356a18
 benraiss@Mbareks-MacBook-Air learnCpp % 
 
 */
