@@ -1,62 +1,51 @@
 #include <iostream>
+#include <string>
 #include <sstream>
 #include "Person.hpp"
 using namespace std;
 
 int main()
 {
+    string name;
+    int age;
 
-    /*{
-        Cat *cat = new Cat();
-        cat->speak();
-        delete cat;
-    }*/
+    cout << "Enter your name: ";
+    getline(cin, name);
 
-    string name = "John";
-    int age = 30;
-    stringstream ss;
+    cout << "Enter your age: ";
+    cin >> age;
 
-    ss << "Name is : " << name;
-    ss << ", Age is : " << age;
-    string info = ss.str();
+    // Create a Person object with user input
+    Person user(name, age);
+    cout << user.toString() << endl;
 
-    // cout << info << endl;
+    // Demonstrate default constructor
+    Person defaultPerson;
+    cout << "Default person: " << defaultPerson.toString() << endl;
 
-    // string info = "Name: " + name + ", Age: " + age;
-    // cout << info << endl;
+    // Demonstrate copy constructor
+    Person copyPerson = user;
+    cout << "Copy of user: " << copyPerson.toString() << endl;
 
-    // Person person;
+    // Show memory locations (for demonstration)
+    cout << "User object memory location: " << &user << endl;
+    cout << "Copy object memory location: " << &copyPerson << endl;
 
-    // person.setName("Alice");
-    // person.setAge(25);
-
-    // cout << "Name: " << person.getName() << endl;
-    // cout << "Age: " << person.getAge() << endl;
-
-    Person person1;
-    cout << person1.toString() << endl;
-
-    Person person2("Bob", 30); // Parameterized constructor
-
-    Person person3("Mbarek", 30); // Parameterized constructor
-                                  //  Person person3 = person2; // Copy constructor
-
-    cout << person2.toString() << " ; memorylocation of persomn 2: " << &person2 << endl;
-    cout << person3.toString() << " ; memorylocation of persomn 3: " << &person3 << endl;
-
-    // person.introduce();
     return 0;
-};
+}
 
 /*
-
-benraiss@Mbareks-MacBook-Air learnCpp % g++ main.cpp Person.cpp -o main && ./main
-Name: undefined, Age: 0
-Name: Bob, Age: 30 ; memorylocation of persomn 2: 0x16b3569e0
-Name: Mbarek, Age: 30 ; memorylocation of persomn 3: 0x16b3569a8
-Destructor called for 0x16b3569a8
-Destructor called for 0x16b3569e0
-Destructor called for 0x16b356a18
-benraiss@Mbareks-MacBook-Air learnCpp % 
+benraiss@MacBookAir learnCpp % g++ main.cpp Person.cpp -o main && ./main
+Enter your name: Benraiss M barek           
+Enter your age: 32
+Name: Benraiss M barek, Age: 32
+Default person: Name: undefined, Age: 0
+Copy of user: Name: Benraiss M barek, Age: 32
+User object memory location: 0x16f96eb48
+Copy object memory location: 0x16f96eac0
+Destructor called for 0x16f96eac0
+Destructor called for 0x16f96eaf8
+Destructor called for 0x16f96eb48
+benraiss@MacBookAir learnCpp % 
 
 */
