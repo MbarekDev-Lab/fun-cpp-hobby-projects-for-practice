@@ -80,7 +80,11 @@ int main()
     cout << "Wide Character Value: " << wValue << endl; // This will print the value of wValue, which is 'G'. Wide Character Value: G
     cout << " Size of wchar_t: " << sizeof(wchar_t) << " bytes" << endl; // This will print the size of the wchar_t type in bytes. Size of wchar_t: 4 bytes (on most platforms, but it can vary)
 
-    /*
+cout << "Enter your selection  > " << flush; // This will prompt the user to enter their selection and flush the output buffer to ensure the prompt is displayed before waiting for input.
+    return 0;
+}
+
+/*
     Basic ASCII Table (0–127)
     Dec  Char   Dec  Char   Dec  Char   Dec  Char
     --------------------------------------------
@@ -121,9 +125,6 @@ int main()
     28  FS    29  GS    30  RS    31  US
     
     */
-
-    return 0;
-}
 
 /*
     benraiss@Mbareks-MacBook-Air learnCpp % g++ main.cpp -o main && ./main
