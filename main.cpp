@@ -54,15 +54,14 @@ int main()
     // char status = 'A';                            // This character variable can be used to represent the status of an account, such as 'A' for active, 'I' for inactive, or 'C' for closed. It can be used in conditional statements to control the flow of logic in financial applications.
     // cout << "Account status: " << status << endl; // This will print the value of the status variable. Account status: A
 
-    char cValue = 71;                              // This will store the ASCII value of the character 'G', which is 71. Value: 71 and Character Value: G
-    char cValue2 = 55;                            // This will store the ASCII value of the character '7', which is 55. Value: 55 and Character Value: 7            
+    char cValue = 71;                               // This will store the ASCII value of the character 'G', which is 71. Value: 71 and Character Value: G
+    char cValue2 = 55;                              // This will store the ASCII value of the character '7', which is 55. Value: 55 and Character Value: 7
     cout << "Character Value: " << cValue << endl;  // This will store the ASCII value of the character 'G', which is 71. Value: 71 and Character Value: G
     cout << "Character Value: " << cValue2 << endl; // This will print the value of cValue2, which is 55. Character Value: 7
-    // why  71 Character Value: G 
+    // why  71 Character Value: G
     // Explanation: In C++, when you assign an integer value to a char variable, it is interpreted as an ASCII code. The ASCII code 71 corresponds to the character 'G'. Therefore, when you print cValue, it prints 'G' instead of 71.
 
-
-    char cValue3 = 'g';                            // This will store the character 'g' directly in the char variable. Value: 103 and Character Value: g
+    char cValue3 = 'g';                             // This will store the character 'g' directly in the char variable. Value: 103 and Character Value: g
     cout << "Character Value: " << cValue3 << endl; // This will print the value of cValue3, which is 'g'. Character Value: g
     // why 103 Character Value: g
     // Explanation: When you assign the character 'g' to a char variable, it is stored as its corresponding ASCII value, which is 103. Therefore, when you print cValue3, it prints 'g' instead of 103.
@@ -71,16 +70,111 @@ int main()
     // why 103 Character Value: 103
     // Explanation: When you cast the char variable cValue3 to an int, it will print the ASCII value of the character 'g', which is 103. Therefore, it prints 103 instead of 'g'.
 
-    cout << "Character Value: " << static_cast<char>(cValue) << endl;  // This will print the character representation of the ASCII value stored in cValue. Character Value: G
-    cout << "Character Value: " << (int)(cValue2) << endl; // This will print the integer value of cValue2, which is 55. Character Value: 55
+    cout << "Character Value: " << static_cast<char>(cValue) << endl; // This will print the character representation of the ASCII value stored in cValue. Character Value: G
+    cout << "Character Value: " << (int)(cValue2) << endl;            // This will print the integer value of cValue2, which is 55. Character Value: 55
 
     cout << " Size of char: " << sizeof(char) << " byte" << endl; // This will print the size of the char type in bytes. Size of char: 1 byte
 
-    wchar_t wValue = L'G'; // This will store the wide character 'G' in a wchar_t variable. Value: 71 and Wide Character Value: G
-    cout << "Wide Character Value: " << wValue << endl; // This will print the value of wValue, which is 'G'. Wide Character Value: G
+    wchar_t wValue = L'G';                                               // This will store the wide character 'G' in a wchar_t variable. Value: 71 and Wide Character Value: G
+    cout << "Wide Character Value: " << wValue << endl;                  // This will print the value of wValue, which is 'G'. Wide Character Value: G
     cout << " Size of wchar_t: " << sizeof(wchar_t) << " bytes" << endl; // This will print the size of the wchar_t type in bytes. Size of wchar_t: 4 bytes (on most platforms, but it can vary)
 
-cout << "Enter your selection  > " << flush; // This will prompt the user to enter their selection and flush the output buffer to ensure the prompt is displayed before waiting for input.
+    cout << "Enter your selection  > " << flush; // This will prompt the user to enter their selection and flush the output buffer to ensure the prompt is displayed before waiting for input.
+
+    /*
+    == equal to
+    != not equal to
+    > greater than
+    < less than
+    >= greater than or equal to
+    <= less than or equal to
+    */
+
+    int value1, value2, value3;
+    cout << "Enter three integer values (value1 value2 value3): ";
+    cin >> value1 >> value2 >> value3;
+
+    // Simple comparison
+    if (value1 >= 8)
+    {
+        cout << "Value1 is greater than or equal to 8 (true)" << endl;
+    }
+    else
+    {
+        cout << "Value1 is less than 8 (false)" << endl;
+    }
+
+    // AND condition
+    if (value1 == 7 && value2 < 4)
+    {
+        cout << "Value1 is 7 AND Value2 is less than 4 (true)" << endl;
+    }
+    else
+    {
+        cout << "Value1 is not 7 OR Value2 is not less than 4 (false)" << endl;
+    }
+
+    // OR condition
+    if (value1 == 10 || value2 == 20)
+    {
+        cout << "Value1 is 10 OR Value2 is 20 (true)" << endl;
+    }
+    else
+    {
+        cout << "Neither Value1 is 10 nor Value2 is 20 (false)" << endl;
+    }
+
+    // NOT condition
+    if (!(value3 == 0))
+    {
+        cout << "Value3 is NOT zero (true)" << endl;
+    }
+    else
+    {
+        cout << "Value3 is zero (false)" << endl;
+    }
+
+    // Complex condition: (A && B) || (C > 5)
+    if ((value1 < 5 && value2 > 2) || (value3 > 5))
+    {
+        cout << "(Value1 < 5 AND Value2 > 2) OR Value3 > 5 (true)" << endl;
+    }
+    else
+    {
+        cout << "Neither (Value1 < 5 AND Value2 > 2) nor Value3 > 5 (false)" << endl;
+    }
+
+    // Nested condition
+    if (value1 > 0)
+    {
+        if (value2 > 0)
+        {
+            cout << "Both Value1 and Value2 are positive (true)" << endl;
+        }
+        else
+        {
+            cout << "Value1 is positive, Value2 is not (false)" << endl;
+        }
+    }
+    else
+    {
+        cout << "Value1 is not positive (false)" << endl;
+    }
+
+    // Additional complex example
+    if ((value2 != 8 && value1 == 10) || value1 < 10)
+    {
+        cout << "((value2 != 8 && value1 == 10) || value1 < 10) is TRUE" << endl;
+    }
+    else
+    {
+        cout << "((value2 != 8 && value1 == 10) || value1 < 10) is FALSE" << endl;
+    }
+
+    // XOR logic (only one is true)
+    bool onlyOne = (value1 > 0) ^ (value2 > 0);
+    cout << "Exactly one of Value1 or Value2 is positive: " << boolalpha << onlyOne << endl;
+
     return 0;
 }
 
@@ -123,7 +217,7 @@ cout << "Enter your selection  > " << flush; // This will prompt the user to ent
     20  DC4   21  NAK   22  SYN   23  ETB
     24  CAN   25  EM    26  SUB   27  ESC
     28  FS    29  GS    30  RS    31  US
-    
+
     */
 
 /*
@@ -153,5 +247,5 @@ cout << "Enter your selection  > " << flush; // This will prompt the user to ent
     Size of char: 1 byte
     Wide Character Value: 71
     Size of wchar_t: 4 bytes
-    benraiss@Mbareks-MacBook-Air learnCpp % 
+    benraiss@Mbareks-MacBook-Air learnCpp %
 */
