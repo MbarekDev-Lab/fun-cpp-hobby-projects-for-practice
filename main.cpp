@@ -3,7 +3,7 @@
 
 /*
 
-This lecture (22. Arrays – Lists of Data) is teaching one of the core building blocks in C++: 
+This lecture (22. Arrays, Lists of Data) is teaching one of the core building blocks in C++: 
 arrays. Let me break down exactly what’s happening in that code you’re seeing in the video and the key concepts you should 
 understand.
 
